@@ -1,4 +1,4 @@
-import {GameService} from '../../services/game/GameService';
+import {GameService} from '../../server/services/game/GameService';
 import {CreateGameGameMutationArgs} from '../../shared/graphql';
 
 export const GameEndpoints = {

@@ -1,5 +1,5 @@
-import {GameModel} from '../../server/database/schema';
-import {CreateGameGameMutationArgs} from '../../shared/graphql';
+import {GameModel} from '../../database/schema';
+import {CreateGameGameMutationArgs} from '../../../shared/graphql';
 
 export const GameService = {
     findAll: async () => await GameModel.find({}),

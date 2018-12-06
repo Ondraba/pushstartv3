@@ -1,6 +1,6 @@
-import {GameModel, ReviewDocument, ReviewModel} from '../../server/database/schema';
+import {GameModel, ReviewDocument, ReviewModel} from '../../database/schema';
 import * as R from 'ramda';
-import {ReviewInput} from '../../shared/graphql';
+import {ReviewInput} from '../../../shared/graphql';
 import {ModelService} from '../common';
 import {promiseWrap} from '../../utils/fp';
 import {log} from '../../utils/logger';
@@ -9,7 +9,7 @@ import {log} from '../../utils/logger';
 export const ReviewService = {
     findAll: async () => await ReviewModel.find({}),
     create: async (input: ReviewInput, gameId: string) => {
-        log(`create review, input: ${input}`);
+        log(`create game, input: ${JSON.stringify(input)}`);
         return R.composeP(
             ModelService.create<ReviewInput, ReviewDocument>(ReviewModel),
             populateGame(gameId),

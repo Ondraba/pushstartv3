@@ -1,6 +1,6 @@
-import {ReviewService} from '../../services/review/ReviewService';
+import {ReviewService} from '../../server/services/review/ReviewService';
 import {ReviewDocument} from '../../server/database/schema';
-import {GameService} from '../../services/game';
+import {GameService} from '../../server/services/game';
 
 export const ReviewEndpoints = {
     Queries: {
