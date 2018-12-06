@@ -7,7 +7,7 @@
     "homepage": "pushstart",
     "repository": {
         "type": "git",
-        "url": "git@github.com:ApiTreeCZ/apitree-public.git"
+        "url": "https://github.com/Ondraba/pushstartv3.git"
     },
     "scripts": {
         "generate:lang": "ts-node --compilerOptions {\\\"module\\\":\\\"commonjs\\\"} ./scripts/default-lang.ts",
