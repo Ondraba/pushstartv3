@@ -1,0 +1,11 @@
+type ReviewMutation{
+    createReview(input: ReviewInput!, gameId:ID!): Review!
+}
+
+input ReviewInput {
+    user: User!
+    text: String!
+    ranking: Int!
+    flags: [Flag!]
+}
+

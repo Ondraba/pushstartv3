@@ -1,0 +1,13 @@
+.idea/
+
+node_modules/
+coverage/
+dist/
+
+secret/
+
+.env
+.coveralls.yml
+.npmrc
+
+.vscode/

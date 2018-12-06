@@ -1,0 +1,16 @@
+type ReviewQuery {
+    reviews: [Review!]!
+}
+
+type Review {
+    _id: ID!
+    user: User!
+    text: String!
+    ranking: Int!
+    flags: [Flag!]
+    game: Game!
+}
+
+enum User {
+    Admin
+}

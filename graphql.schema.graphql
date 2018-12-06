@@ -1,0 +1,79 @@
+type Query {
+  game: GameQuery!
+  review: ReviewQuery!
+}
+
+type Mutation {
+  game: GameMutation!
+  review: ReviewMutation!
+}
+
+type GameQuery {
+  games: [Game!]!
+}
+
+type ReviewQuery {
+  reviews: [Review!]!
+}
+
+type GameMutation {
+  createGame(input: GameInput!): Game!
+}
+
+type ReviewMutation {
+  createReview(input: ReviewInput!, gameId: ID!): Review!
+}
+
+type Game {
+  _id: ID!
+  title: String!
+  perex: String!
+  overallRanking: Int
+  platforms: [Platform!]!
+  flags: [Flag!]!
+  cover: String
+  releaseDate: String
+  reviews: [Review!]
+}
+
+type Review {
+  _id: ID!
+  user: User!
+  text: String!
+  ranking: Int!
+  flags: [Flag!]
+  game: Game!
+}
+
+input GameInput {
+  title: String!
+  perex: String!
+  platforms: [Platform!]!
+  cover: String
+  releaseDate: String
+  flags: [Flag!]
+}
+
+input ReviewInput {
+  user: User!
+  text: String!
+  ranking: Int!
+  flags: [Flag!]
+}
+
+enum Platform {
+  PS4
+  XONE
+  PC
+}
+
+enum Flag {
+  CloseToMyHearth
+  GameOfLife
+  FutureClassic
+}
+
+enum User {
+  Admin
+}
+

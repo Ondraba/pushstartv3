@@ -1,0 +1,2 @@
+#import * from "./game.mutation.graphql"
+#import * from "./game.query.graphql"

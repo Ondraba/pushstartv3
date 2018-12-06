@@ -1,0 +1,12 @@
+#import * from "./game/game.graphql"
+#import * from "./review/review.graphql"
+
+type Query {
+    game: GameQuery!
+    review: ReviewQuery!
+}
+
+type Mutation {
+    game: GameMutation!
+    review: ReviewMutation!
+}

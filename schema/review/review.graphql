@@ -1,0 +1,2 @@
+#import * from "./review.query.graphql"
+#import * from "./review.mutation.graphql"

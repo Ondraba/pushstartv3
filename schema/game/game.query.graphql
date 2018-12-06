@@ -1,0 +1,30 @@
+type GameQuery {
+    games: [Game!]!
+}
+
+type Game {
+    _id: ID!
+    title: String!
+    perex: String!
+    overallRanking: Int
+    platforms: [Platform!]!
+    flags: [Flag!]!
+    cover: String
+    releaseDate: String
+    reviews: [Review!]
+}
+
+enum Platform{
+    PS4
+    XONE
+    PC
+}
+
+enum Flag {
+    CloseToMyHearth
+    GameOfLife
+    FutureClassic
+}
+
+
+
