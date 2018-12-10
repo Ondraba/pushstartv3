@@ -18,7 +18,7 @@ const checkCollectionIsFilled = async<TDocument extends Document>(model:Model<TD
     return checkCollection.length > 0 ? true : false;
 }
 
-const createModel = async(imports:[{model:Model<any>,data:any}]) => {
+const createModel = async(imports:[{model:Model<any>,data:any}]): Promise<void> => {
     await Promise.all(imports.map(async imp => {
         const collectionIsNotEmpty = await checkCollectionIsFilled(imp.model);
         if(!collectionIsNotEmpty){

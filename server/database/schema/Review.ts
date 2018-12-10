@@ -1,12 +1,12 @@
 import {Document, model, Model, Schema} from 'mongoose';
-import {User, ReviewFlag} from '../../../shared/graphql';
+import {User, ReviewFlagCode} from '../../../shared/graphql';
 import {GameDocument, GameModel} from './Game';
 
 export interface ReviewDocument extends Document {
     user: User;
     text: string;
     ranking: number;
-    flags?: ReviewFlag[];
+    flags?: ReviewFlagCode[];
     game: GameDocument;
 }
 

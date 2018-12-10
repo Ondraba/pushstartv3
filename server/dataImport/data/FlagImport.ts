@@ -1,4 +1,4 @@
-import {GameFlag, GameFlagCode, ReviewFlag, ReviewFlagCode} from '../../../shared/graphql';
+import {FlagIdentifier, GameFlag, GameFlagCode, ReviewFlag, ReviewFlagCode} from '../../../shared/graphql';
 
 type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
@@ -11,19 +11,22 @@ export const ReviewFlags: ReviewFlagInput[] = [
         title: 'Srdeční záležitost',
         perex: 'Vyjímečná hra, srdeční záležitost.',
         image: 'url/',
-        code: ReviewFlagCode.CloseToMyHearth
+        code: ReviewFlagCode.CloseToMyHearth,
+        identifier: FlagIdentifier.REVIEW,
     },
     {
         title: 'Budoucí klasika',
         perex: 'Budoucí klasika.',
         image: 'url/',
-        code: ReviewFlagCode.FutureClassic
+        code: ReviewFlagCode.FutureClassic,
+        identifier: FlagIdentifier.REVIEW,
     },
     {
         title: 'Životní zážitek',
         perex: 'Hra, která mi ovlivnila život.',
         image: 'url/',
-        code: ReviewFlagCode.GameOfLife
+        code: ReviewFlagCode.GameOfLife,
+        identifier: FlagIdentifier.REVIEW,
     }
 ]
 
@@ -32,19 +35,22 @@ export const GameFlags: GameFlagInput[] = [
         title: 'Novinka',
         perex: 'Novina. Právě vyšlo.',
         image: 'url/',
-        code: GameFlagCode.Hot
+        code: GameFlagCode.Hot,
+        identifier: FlagIdentifier.GAME,
     },
     {
         title: 'Klasika',
         perex: 'Klasika.',
         image: 'url/',
-        code: GameFlagCode.Classic
+        code: GameFlagCode.Classic,
+        identifier: FlagIdentifier.GAME,
     },
     {
         title: 'Indie',
         perex: 'Nezávislá hra.',
         image: 'url/',
-        code: GameFlagCode.Indie
+        code: GameFlagCode.Indie,
+        identifier: FlagIdentifier.GAME,
     }
 ]
 

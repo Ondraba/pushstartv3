@@ -1,11 +1,12 @@
 import {Document, model, Model, Schema} from 'mongoose';
-import {ReviewFlagCode,GameFlagCode} from '../../../shared/graphql';
+import {ReviewFlagCode, GameFlagCode, FlagIdentifier} from '../../../shared/graphql';
 
 export interface FlagDocument extends Document {
     title: string;
     perex: string;
     image: string;
     code: ReviewFlagCode | GameFlagCode;
+    identifier: FlagIdentifier;
 }
 
 export const FlagSchema = new Schema({
@@ -22,7 +23,11 @@ export const FlagSchema = new Schema({
         required: true,
     },
     code:{
-        type: Number,
+        type: String,
+        required: true,
+    },
+    identifier:{
+        type: String,
         required: true,
     },
 });

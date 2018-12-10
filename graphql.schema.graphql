@@ -57,6 +57,7 @@ type GameFlag {
   perex: String!
   image: String!
   code: GameFlagCode!
+  identifier: FlagIdentifier!
 }
 
 type ReviewFlag {
@@ -65,6 +66,7 @@ type ReviewFlag {
   perex: String!
   image: String!
   code: ReviewFlagCode!
+  identifier: FlagIdentifier!
 }
 
 input GameInput {
@@ -97,6 +99,11 @@ enum GameFlagCode {
   Hot
   Classic
   Indie
+}
+
+enum FlagIdentifier {
+  GAME
+  REVIEW
 }
 
 enum ReviewFlagCode {

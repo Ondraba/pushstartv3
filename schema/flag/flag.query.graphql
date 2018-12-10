@@ -3,12 +3,18 @@ type FlagQuery {
     reviewFlags: [ReviewFlag!]!
 }
 
+enum FlagIdentifier {
+    GAME
+    REVIEW
+}
+
 type GameFlag {
     _id: ID!
     title: String!
     perex: String!
     image: String!
     code: GameFlagCode!
+    identifier: FlagIdentifier!
 }
 
 type ReviewFlag {
@@ -17,18 +23,7 @@ type ReviewFlag {
     perex: String!
     image: String!
     code: ReviewFlagCode!
+    identifier: FlagIdentifier!
 }
 
-type GameFlagInput {
-    title: String!
-    perex: String!
-    image: String!
-    code: GameFlagCode!
-}
 
-type ReviewFlagInput {
-    title: String!
-    perex: String!
-    image: String!
-    code: ReviewFlagCode!
-}

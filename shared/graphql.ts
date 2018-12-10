@@ -41,6 +41,7 @@ export interface GameFlag {
     perex: string;
     image: string;
     code: GameFlagCode;
+    identifier: FlagIdentifier;
 }
 
 export interface Review {
@@ -58,6 +59,7 @@ export interface ReviewFlag {
     perex: string;
     image: string;
     code: ReviewFlagCode;
+    identifier: FlagIdentifier;
 }
 
 export interface ReviewQuery {
@@ -117,6 +119,11 @@ export enum GameFlagCode {
     Indie = 'Indie',
 }
 
+export enum FlagIdentifier {
+    GAME = 'GAME',
+    REVIEW = 'REVIEW',
+}
+
 export enum User {
     Admin = 'Admin',
 }
@@ -171,6 +178,7 @@ export interface GameFlagResolvers<Context = any> {
     perex?: GameFlagPerexResolver<string, any, Context>;
     image?: GameFlagImageResolver<string, any, Context>;
     code?: GameFlagCodeResolver<GameFlagCode, any, Context>;
+    identifier?: GameFlagIdentifierResolver<FlagIdentifier, any, Context>;
 }
 
 export type GameFlagIdResolver<R = string, Parent = any, Context = any> = Resolver<R, Parent, Context>;
@@ -178,6 +186,7 @@ export type GameFlagTitleResolver<R = string, Parent = any, Context = any> = Res
 export type GameFlagPerexResolver<R = string, Parent = any, Context = any> = Resolver<R, Parent, Context>;
 export type GameFlagImageResolver<R = string, Parent = any, Context = any> = Resolver<R, Parent, Context>;
 export type GameFlagCodeResolver<R = GameFlagCode, Parent = any, Context = any> = Resolver<R, Parent, Context>;
+export type GameFlagIdentifierResolver<R = FlagIdentifier, Parent = any, Context = any> = Resolver<R, Parent, Context>;
 
 export interface ReviewResolvers<Context = any> {
     _id?: ReviewIdResolver<string, any, Context>;
@@ -201,6 +210,7 @@ export interface ReviewFlagResolvers<Context = any> {
     perex?: ReviewFlagPerexResolver<string, any, Context>;
     image?: ReviewFlagImageResolver<string, any, Context>;
     code?: ReviewFlagCodeResolver<ReviewFlagCode, any, Context>;
+    identifier?: ReviewFlagIdentifierResolver<FlagIdentifier, any, Context>;
 }
 
 export type ReviewFlagIdResolver<R = string, Parent = any, Context = any> = Resolver<R, Parent, Context>;
@@ -208,6 +218,7 @@ export type ReviewFlagTitleResolver<R = string, Parent = any, Context = any> = R
 export type ReviewFlagPerexResolver<R = string, Parent = any, Context = any> = Resolver<R, Parent, Context>;
 export type ReviewFlagImageResolver<R = string, Parent = any, Context = any> = Resolver<R, Parent, Context>;
 export type ReviewFlagCodeResolver<R = ReviewFlagCode, Parent = any, Context = any> = Resolver<R, Parent, Context>;
+export type ReviewFlagIdentifierResolver<R = FlagIdentifier, Parent = any, Context = any> = Resolver<R, Parent, Context>;
 
 export interface ReviewQueryResolvers<Context = any> {
     reviews?: ReviewQueryReviewsResolver<Review[], any, Context>;

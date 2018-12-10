@@ -1,6 +1,7 @@
 import {ReviewService} from '../../server/services/review/ReviewService';
 import {ReviewDocument} from '../../server/database/schema';
 import {GameService} from '../../server/services/game';
+import {FlagService} from '../../server/services/flag';
 
 export const ReviewEndpoints = {
     Queries: {
@@ -16,8 +17,8 @@ export const ReviewEndpoints = {
     Types: {
         Review: {
             game: (source: ReviewDocument) => GameService.findById(String(source.game)),
-            // flags: (source: ReviewDocument) =>
-            //     source.flags ? FlagService.findByCodes(String(source.flags)) : null,
+            flags: (source: ReviewDocument) =>
+                source.flags ? FlagService.findByCodes(source.flags) : null,
         },
     },
 };
