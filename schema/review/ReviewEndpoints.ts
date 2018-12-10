@@ -16,6 +16,8 @@ export const ReviewEndpoints = {
     Types: {
         Review: {
             game: (source: ReviewDocument) => GameService.findById(String(source.game)),
+            // flags: (source: ReviewDocument) =>
+            //     source.flags ? FlagService.findByCodes(String(source.flags)) : null,
         },
     },
 };

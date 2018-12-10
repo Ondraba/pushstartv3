@@ -1,12 +1,12 @@
 import {Document, model, Model, Schema} from 'mongoose';
-import {Platform, Flag} from '../../../shared/graphql';
+import {Platform, GameFlag} from '../../../shared/graphql';
 
 export interface GameDocument extends Document {
     title: string;
     perex: string;
     overalRanking?: number;
     platforms: Platform[];
-    flags: Flag[];
+    flags: GameFlag[];
     cover?: string;
     releaseDate?: string;
 }

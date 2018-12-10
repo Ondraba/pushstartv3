@@ -7,10 +7,12 @@ type Review {
     user: User!
     text: String!
     ranking: Int!
-    flags: [Flag!]
+    flags: [ReviewFlag!]
     game: Game!
 }
 
 enum User {
     Admin
 }
+
+

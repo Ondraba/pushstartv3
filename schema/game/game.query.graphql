@@ -8,7 +8,7 @@ type Game {
     perex: String!
     overallRanking: Int
     platforms: [Platform!]!
-    flags: [Flag!]!
+    flags: [GameFlag!]!
     cover: String
     releaseDate: String
     reviews: [Review!]
@@ -20,11 +20,6 @@ enum Platform{
     PC
 }
 
-enum Flag {
-    CloseToMyHearth
-    GameOfLife
-    FutureClassic
-}
 
 
 

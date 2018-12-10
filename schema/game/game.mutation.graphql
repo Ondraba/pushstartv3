@@ -8,5 +8,11 @@ input GameInput {
     platforms: [Platform!]!
     cover: String
     releaseDate: String
-    flags: [Flag!]
+    flags: [GameFlagCode!]
+}
+
+enum GameFlagCode {
+    Hot
+    Classic
+    Indie
 }

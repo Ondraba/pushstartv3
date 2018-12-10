@@ -21,6 +21,7 @@
         "dev": "npm run generate:graphql && npm run generate:lang && nodemon server/index.ts",
         "dev:server": "nodemon server/index-dev.ts",
         "dev:client": "npm run generate:graphql && npm run generate:lang && tsc --project tsconfig.server.json && node dist/server/index.js",
+        "import": "node ImportService.ts",
         "debug": "node --inspect dist/index.js",
         "tslint": "tslint -c tslint.json 'client/**/*.*' 'pages/**/*.*' 'server/**/*.*'",
         "tslint:check": "tslint-config-prettier-check ./tslint.json",

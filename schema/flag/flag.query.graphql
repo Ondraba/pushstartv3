@@ -1,0 +1,34 @@
+type FlagQuery {
+    gameFlags: [GameFlag!]!
+    reviewFlags: [ReviewFlag!]!
+}
+
+type GameFlag {
+    _id: ID!
+    title: String!
+    perex: String!
+    image: String!
+    code: GameFlagCode!
+}
+
+type ReviewFlag {
+    _id: ID!
+    title: String!
+    perex: String!
+    image: String!
+    code: ReviewFlagCode!
+}
+
+type GameFlagInput {
+    title: String!
+    perex: String!
+    image: String!
+    code: GameFlagCode!
+}
+
+type ReviewFlagInput {
+    title: String!
+    perex: String!
+    image: String!
+    code: ReviewFlagCode!
+}

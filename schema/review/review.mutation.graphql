@@ -6,6 +6,11 @@ input ReviewInput {
     user: User!
     text: String!
     ranking: Int!
-    flags: [Flag!]
+    flags: [ReviewFlagCode!]
 }
 
+enum ReviewFlagCode {
+    CloseToMyHearth
+    GameOfLife
+    FutureClassic
+}

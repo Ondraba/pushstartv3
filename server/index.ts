@@ -10,6 +10,7 @@ import {createApolloServer} from './graphql';
 import {Database} from './database';
 // import * as jwt from 'jsonwebtoken';
 import * as bodyParser from 'body-parser';
+import {ImportService} from './dataImport/ImportService';
 // import {AdminService} from './services/AdminService';
 
 // tslint:disable-next-line
@@ -66,6 +67,8 @@ app.prepare()
         const server = express();
 
         createApolloServer(SECRET, {introspection: true}).applyMiddleware({app: server});
+
+        await ImportService.init();
 
         server.get('/healthz', (_, res) => {
             // check my health

@@ -1,9 +1,11 @@
 #import * from "./game/game.graphql"
 #import * from "./review/review.graphql"
+#import * from "./flag/flag.graphql"
 
 type Query {
     game: GameQuery!
     review: ReviewQuery!
+    flag: FlagQuery!
 }
 
 type Mutation {
