@@ -1,6 +1,7 @@
 #import * from "./game/game.graphql"
 #import * from "./review/review.graphql"
 #import * from "./flag/flag.graphql"
+#import * from "./common/common.graphql"
 
 type Query {
     game: GameQuery!
@@ -11,4 +12,19 @@ type Query {
 type Mutation {
     game: GameMutation!
     review: ReviewMutation!
+}
+
+type ValidationMessage {
+    code: String!
+    field: String
+    desc: String
+    field: String
+    type: ValidationMessageType!
+    message: String!
+}
+
+enum ValidationMessageType {
+    ERROR
+    WARNING
+    HINT
 }

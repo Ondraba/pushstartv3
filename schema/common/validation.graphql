@@ -1,0 +1,14 @@
+type ValidationMessage {
+    code: String!
+    field: String
+    desc: String
+    field: String
+    type: ValidationMessageType!
+    message: String!
+}
+
+enum ValidationMessageType {
+    ERROR
+    WARNING
+    HINT
+}

@@ -9,6 +9,21 @@ type Mutation {
   review: ReviewMutation!
 }
 
+type ValidationMessage {
+  code: String!
+  field: String
+  desc: String
+  field: String
+  type: ValidationMessageType!
+  message: String!
+}
+
+enum ValidationMessageType {
+  ERROR
+  WARNING
+  HINT
+}
+
 type GameQuery {
   games: [Game!]!
 }

@@ -13,15 +13,15 @@ export const ImportService = {
     },
 };
 
-const checkCollectionIsFilled = async<TDocument extends Document>(model:Model<TDocument>): Promise<boolean> => {
+const checkCollectionIsEmpty = async<TDocument extends Document>(model:Model<TDocument>): Promise<boolean> => {
     const checkCollection = await model.find({});
-    return checkCollection.length > 0 ? true : false;
+    return R.propEq('length', 0)(checkCollection);
 }
 
 const createModel = async(imports:[{model:Model<any>,data:any}]): Promise<void> => {
     await Promise.all(imports.map(async imp => {
-        const collectionIsNotEmpty = await checkCollectionIsFilled(imp.model);
-        if(!collectionIsNotEmpty){
+        const collectionIsEmpty = await checkCollectionIsEmpty(imp.model);
+        if(collectionIsEmpty){
             log(`model ${imp.model.modelName} import started`);
             imp.model.collection.insertMany(imp.data);
             log(`filling model ${imp.model.modelName} collection with data: ${JSON.stringify(imp.data)}`);

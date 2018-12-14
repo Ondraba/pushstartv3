@@ -84,6 +84,14 @@ export interface ReviewMutation {
     createReview: Review;
 }
 
+export interface ValidationMessage {
+    code: string;
+    field?: string | null;
+    desc?: string | null;
+    type: ValidationMessageType;
+    message: string;
+}
+
 export interface GameInput {
     title: string;
     perex: string;
@@ -132,6 +140,12 @@ export enum ReviewFlagCode {
     CloseToMyHearth = 'CloseToMyHearth',
     GameOfLife = 'GameOfLife',
     FutureClassic = 'FutureClassic',
+}
+
+export enum ValidationMessageType {
+    ERROR = 'ERROR',
+    WARNING = 'WARNING',
+    HINT = 'HINT',
 }
 
 export interface QueryResolvers<Context = any> {
@@ -260,3 +274,17 @@ export interface ReviewMutationCreateReviewArgs {
     input: ReviewInput;
     gameId: string;
 }
+
+export interface ValidationMessageResolvers<Context = any> {
+    code?: ValidationMessageCodeResolver<string, any, Context>;
+    field?: ValidationMessageFieldResolver<string | null, any, Context>;
+    desc?: ValidationMessageDescResolver<string | null, any, Context>;
+    type?: ValidationMessageTypeResolver<ValidationMessageType, any, Context>;
+    message?: ValidationMessageMessageResolver<string, any, Context>;
+}
+
+export type ValidationMessageCodeResolver<R = string, Parent = any, Context = any> = Resolver<R, Parent, Context>;
+export type ValidationMessageFieldResolver<R = string | null, Parent = any, Context = any> = Resolver<R, Parent, Context>;
+export type ValidationMessageDescResolver<R = string | null, Parent = any, Context = any> = Resolver<R, Parent, Context>;
+export type ValidationMessageTypeResolver<R = ValidationMessageType, Parent = any, Context = any> = Resolver<R, Parent, Context>;
+export type ValidationMessageMessageResolver<R = string, Parent = any, Context = any> = Resolver<R, Parent, Context>;

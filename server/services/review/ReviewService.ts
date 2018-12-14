@@ -4,6 +4,7 @@ import {ReviewInput} from '../../../shared/graphql';
 import {ModelService} from '../common';
 import {promiseWrap} from '../../utils/fp';
 import {log} from '../../utils/logger';
+import {ReviewValidations} from '../../../validations/review';
 
 
 export const ReviewService = {
@@ -14,6 +15,7 @@ export const ReviewService = {
             ModelService.create<ReviewInput, ReviewDocument>(ReviewModel),
             populateGame(gameId),
             promiseWrap<ReviewInput>(input),
+            () => ReviewValidations({})(input).init(),
         )({});
     },
 };
