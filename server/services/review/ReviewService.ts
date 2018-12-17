@@ -6,7 +6,6 @@ import {promiseWrap} from '../../utils/fp';
 import {log} from '../../utils/logger';
 import {ReviewValidations} from '../../../validations/review';
 
-
 export const ReviewService = {
     findAll: async () => await ReviewModel.find({}),
     create: async (input: ReviewInput, gameId: string) => {
@@ -15,7 +14,7 @@ export const ReviewService = {
             ModelService.create<ReviewInput, ReviewDocument>(ReviewModel),
             populateGame(gameId),
             promiseWrap<ReviewInput>(input),
-            () => ReviewValidations({})(input).init(),
+            () => ReviewValidations({}, false)(input).init(),
         )({});
     },
 };
@@ -27,5 +26,3 @@ const populateGame = (gameId: string) => async (payload: any) => {
         return {...payload, game};
     })({});
 };
-
-
