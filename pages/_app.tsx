@@ -26,15 +26,15 @@ class NextApp extends App {
         palette: {
             type: 'light',
             primary: {
-                main: '#f21b09',
-                light: '#ff5f3a',
-                dark: '#b60000',
+                main: '#9c27b0',
+                light: '#d05ce3',
+                dark: '#6a0080',
                 contrastText: '#fff',
             },
             secondary: {
-                main: '#40AEBB',
-                light: '#78e0ed',
-                dark: '#007e8b',
+                main: '#00bfa5',
+                light: '#5df2d6',
+                dark: '#008e76',
                 contrastText: '#fff',
             },
         },
